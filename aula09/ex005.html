@@ -8,15 +8,22 @@
     <style>
       body {
         background-color: cornflowerblue;
-        font-size: 20pt;
-        color: azure;
+        color: white;
+        font: normal 18pt arial;
       }
     </style>
   </head>
-  <h1>Iniciando estudo com Dok
-
-  </h1>
   <body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique aqui</div>
+    <script>
+      var corpo = document.body;
+      var p1 = document.getElementsByTagName("p")[1];
+      var d = document.querySelector('div#msg')
+      d.style.color = 'blue'
+      d.style.background = 'yellow'
     </script>
   </body>
 </html>
