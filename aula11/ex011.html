@@ -5,19 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nativo</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        background: linear-gradient(
+            to bottom,
+            rgb(0, 51, 255),
+            rgb(0, 128, 55),
+            rgb(241, 252, 88)
+          )
+          no-repeat;
+          color: rgb(243, 204, 34);
+          font: normal 15pt arial;
+        height: 100vh;
+        margin: 15px;
+      }
+      h1 {
+        background-color: rgba(250, 250, 210, 0.424);
+        border-radius: 25px;
+        width: 480px;
+        margin: 10px;
+        box-shadow: 2px 2px 2px rgba(3, 3, 142, 0.521);
+      }
+     
+      div#caixa {
+        
+        box-shadow: 1px 1px 1px rgba(3, 3, 142, 0.521);
+        border-radius: 20px;        
+        background-color: rgba(255, 255, 255, 0.633);font: 20px arial;
+        margin: 10px;
+        padding: 5px;
+        width: 360px;
+      }
+      input {
+        font-size: 20px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Você é Brasileiro?</h1>
-    Qual país você nasceu?<input type="text" name="txtpa" id="txtpa" />
-    <input type="button" value="Verificar" onclick="nativo()" />
+    <h1>Qual país você nasceu?</h1>
+    <div id="caixa">
+      País <input type="text" name="txtpa" id="txtpa" />
+      <input type="button" value="Verificar" onclick="nativo()" />
+    </div>
+
     <div id="natural"></div>
     <script>
       function nativo() {
-        var txtp = document.getElementById("input#txtpa");
-        var natu = document.getElementById("div#natural");
-        var pa = String(txtp.value)       
-        res.innerHTML = `Você nasceu no <strong>${pa}</strong>`;
-       
+        var txtp = document.getElementById("txtpa");
+        var natu = document.getElementById("natural");
+        var pa = String(txtp.value);
+        natu.innerHTML = `<p>Você nasceu no <strong>${pa}! </strong> </p>`;
+
+        if (pa == "Brasil") {
+          natu.innerHTML += "<p>Então é Brasileiro!!</p>";
+        } else {
+          natu.innerHTML += "<p>Então é Estrangeiro!</p>";
+        }
+        natu.innerHTML += "<p>Seja bem vindo de onde você for!</p>";
       }
     </script>
   </body>

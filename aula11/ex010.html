@@ -5,24 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detran</title>
+    <style>
+      body {
+        background: rgba(0, 51, 255, 0.582);
+        color: rgb(243, 204, 34);
+        font: normal 15pt arial;
+        height: 100vh;
+        margin: 15px;
+      }
+      h1 {
+        width: 380px;
+        margin: 10px;
+      }
+      div#caixa {
+        padding: 5px;
+        width: 500px;
+      }
+    </style>
   </head>
   <body>
     <h1>Sistema de Multas</h1>
-    Velocidade do carro: <input type="number" name="txtvel" id="txtvel" />Km/h
-    <input type="button" value="Verificar" onclick="calcular()" />
+    <div id="caixa">
+      Velocidade do carro: <input type="number" name="txtvel" id="txtvel" /> Km/h! <br>
+      <input type="button" value="Verificar" onclick="calcular()" />
+    </div>
     <div id="res"></div>
     <script>
       function calcular() {
         var txtv = document.querySelector("input#txtvel");
         var res = document.querySelector("div#res");
         var vel = Number(txtv.value);
-        res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h</strong></p`;
+        res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}Km/h.</strong></p>`;
         if (vel > 60) {
           res.innerHTML +=
-            "<p>Você está <strong>MULTADO</strong> por excesso de velocidade</p>";            
+            "<p>Você está <strong>MULTADO</strong> por excesso de velocidade.</p>";
         }
-        res.innerHTML += `<p>Dirija sempre com o cinto de segurança</p>`;
-        
+        res.innerHTML += `<p>Dirija sempre com o cinto de segurança.</p>`;
       }
     </script>
   </body>
