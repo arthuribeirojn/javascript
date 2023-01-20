@@ -4,16 +4,17 @@ var msg = window.document.getElementById('msg')
 var img = window.document.getElementById('foto')
 var data = new Date()
 //var hora = data.getHours()
-var hora = 16
+var hora = 10
+
 msg.innerHTML = `Agora são ${hora} horas.`
 if (hora >= 0 && hora < 12) {
-    img.src = 'dia.png'
+    imagem.src = 'dia.png'
+    document.body.style.background = 'rgb(231, 198, 150)'
 }else if (hora >= 12 && hora < 18) {
-    img.src = 'tarde.png'
-
+    imagem.src = 'tarde.png'
+    document.body.style.background = '#df722e'
 }else{
-    img.src = 'noite.png'
-
+    imagem.src = 'noite.png'
+    document.body.style.background = '#2854c4'
 }
-
 }
