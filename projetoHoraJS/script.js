@@ -6,7 +6,6 @@ var data = new Date()
 //var hora = data.getHours()
 var hora = 16
 
-
 msg.innerHTML = `Agora são ${hora} horas.`
 if (hora >= 0 && hora < 12) {
     imagem.src = 'dia.png'
